@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhovani Wijaya - Pengusaha & Pecinta Olahraga</title>
+    <meta name="description" content="Jhovani Wijaya - Pengusaha di bidang pertanian dan peternakan, pecinta sepak bola dan futsal">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        green: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-slow': 'bounce 2s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255,255,255,0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(255,255,255,0.6);
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 25%, #06b6d4 50%, #22d3ee 75%, #67e8f9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        
+        .text-clean {
+            text-shadow: none;
+            font-weight: 600;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .animal-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .animal-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: #3b82f6;
+        }
+        
+        .animal-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .floating-slow {
+            animation: float-slow 4s ease-in-out infinite;
+        }
+        
+        .glow-pulse {
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+        
+        .glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .bg-pattern {
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        .counter-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .counter-section.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .parallax {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .text-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .text-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        
+        
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-primary-700">Jhovani Wijaya</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-800 hover:text-primary-600 px-3 py-2 text-sm font-semibold transition-colors">Beranda</a>
+                        <a href="#about" class="nav-link text-gray-800 hover:text-primary-600 px-3 py-2 text-sm font-semibold transition-colors">Tentang</a>
+                        <a href="#experience" class="nav-link text-gray-800 hover:text-primary-600 px-3 py-2 text-sm font-semibold transition-colors">Pengalaman</a>
+                        <a href="#business" class="nav-link text-gray-800 hover:text-primary-600 px-3 py-2 text-sm font-semibold transition-colors">Bisnis</a>
+                        <a href="#sports" class="nav-link text-gray-800 hover:text-primary-600 px-3 py-2 text-sm font-semibold transition-colors">Olahraga</a>
+                        <a href="#animals" class="nav-link text-gray-800 hover:text-primary-600 px-3 py-2 text-sm font-semibold transition-colors">Hewan</a>
+                        <a href="#contact" class="nav-link text-gray-800 hover:text-primary-600 px-3 py-2 text-sm font-semibold transition-colors">Kontak</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="mobile-nav-link block px-3 py-2 text-gray-800 hover:text-primary-600">Beranda</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2 text-gray-800 hover:text-primary-600">Tentang</a>
+                <a href="#experience" class="mobile-nav-link block px-3 py-2 text-gray-800 hover:text-primary-600">Pengalaman</a>
+                <a href="#business" class="mobile-nav-link block px-3 py-2 text-gray-800 hover:text-primary-600">Bisnis</a>
+                <a href="#sports" class="mobile-nav-link block px-3 py-2 text-gray-800 hover:text-primary-600">Olahraga</a>
+                <a href="#animals" class="mobile-nav-link block px-3 py-2 text-gray-800 hover:text-primary-600">Hewan</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-gray-800 hover:text-primary-600">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Welcome Badge -->
+                <div class="mb-8">
+                    <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold border border-white/30">
+                        👋 Selamat Datang di Portfolio Saya
+                    </span>
+                </div>
+                
+                <!-- Main Title -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+                    <span class="text-white">Jhovani</span> 
+                    <span class="text-yellow-300">Wijaya</span>
+                </h1>
+                
+                <!-- Subtitle -->
+                <div class="text-xl md:text-2xl mb-8 text-white font-medium">
+                    <span class="text-yellow-300">Pengusaha Visioner</span> • 
+                    <span class="text-green-300">Ahli Pertanian</span> • 
+                    <span class="text-orange-300">Pecinta Olahraga</span>
+                </div>
+                
+                <!-- Description -->
+                <p class="text-lg mb-10 text-white max-w-3xl mx-auto leading-relaxed font-medium">
+                    Membangun masa depan yang berkelanjutan melalui inovasi di bidang 
+                    <span class="text-yellow-300 font-semibold">pertanian</span> dan 
+                    <span class="text-green-300 font-semibold">peternakan</span>, 
+                    sambil menjaga semangat kompetitif dalam 
+                    <span class="text-orange-300 font-semibold">olahraga</span> dan 
+                    kecintaan pada <span class="text-purple-300 font-semibold">hewan</span>.
+                </p>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                    <a href="#about" class="bg-yellow-400 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Pelajari Lebih Lanjut
+                    </a>
+                    <a href="#contact" class="border-2 border-yellow-300 text-yellow-200 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 hover:text-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Hubungi Saya
+                    </a>
+                </div>
+                
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-yellow-300 mb-2">12+</div>
+                        <div class="text-sm text-white font-medium">Tahun Pengalaman</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-300 mb-2">500+</div>
+                        <div class="text-sm text-white font-medium">Hektar Lahan</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-orange-300 mb-2">200+</div>
+                        <div class="text-sm text-white font-medium">Petani Terinspirasi</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-purple-300 mb-2">1000+</div>
+                        <div class="text-sm text-white font-medium">Hewan Ternak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-sky-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-800 mb-4">Tentang Saya</h2>
+                <p class="text-xl text-blue-600 max-w-3xl mx-auto font-medium">
+                    Pengusaha yang penuh semangat dengan kecintaan pada olahraga dan pertanian berkelanjutan
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-up">
+                    <div class="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100">
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-6">Perjalanan Hidup Saya</h3>
+                        <p class="text-gray-700 mb-4 leading-relaxed font-medium">
+                            Perjalanan saya dimulai dari kecintaan pada alam sejak kecil. Saya tumbuh di lingkungan pedesaan 
+                            yang mengajarkan saya tentang pentingnya menjaga keseimbangan alam. Dengan pengalaman lebih dari 
+                            12 tahun di bidang pertanian dan peternakan, saya telah membangun ekosistem bisnis yang tidak 
+                            hanya menguntungkan secara ekonomi, tetapi juga berkontribusi positif bagi lingkungan dan 
+                            masyarakat sekitar. Setiap hari adalah pembelajaran baru tentang bagaimana menciptakan 
+                            sistem yang berkelanjutan.
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed font-medium">
+                            Olahraga telah menjadi bagian integral dari hidup saya sejak usia muda. Sepak bola dan futsal 
+                            tidak hanya memberikan kesehatan fisik, tetapi juga mengajarkan saya tentang kepemimpinan, 
+                            kerja tim, dan semangat pantang menyerah. Saya pernah memimpin tim futsal lokal yang berhasil 
+                            meraih juara regional. Pengalaman ini mengajarkan saya bahwa kesuksesan datang dari persiapan 
+                            yang matang, strategi yang tepat, dan kerja sama yang solid.
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed font-medium">
+                            Kecintaan saya pada hewan dimulai dari pengalaman memelihara kucing pertama saya di usia 8 tahun. 
+                            Hewan-hewan mengajarkan saya tentang kesabaran, kasih sayang, dan tanggung jawab. Saya percaya 
+                            bahwa hewan yang bahagia akan menghasilkan produk yang berkualitas. Ini yang mendorong saya 
+                            mengembangkan peternakan dengan standar kesejahteraan hewan tertinggi.
+                        </p>
+                        <p class="text-gray-700 mb-6 leading-relaxed font-medium">
+                            Visi saya adalah menciptakan model bisnis yang dapat dijadikan contoh bagi generasi muda, 
+                            menggabungkan teknologi modern dengan kearifan lokal, dan selalu mengedepankan keberlanjutan 
+                            lingkungan untuk masa depan yang lebih baik.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">Pertanian</span>
+                            <span class="bg-cyan-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">Peternakan</span>
+                            <span class="bg-sky-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">Sepak Bola</span>
+                            <span class="bg-indigo-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">Futsal</span>
+                            <span class="bg-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">Hewan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-up">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl text-center card-hover">
+                            <i data-lucide="trending-up" class="w-8 h-8 mx-auto mb-2"></i>
+                            <h4 class="font-semibold">Pertumbuhan Bisnis</h4>
+                            <p class="text-sm opacity-90">12+ Tahun Pengalaman</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-cyan-500 to-cyan-600 text-white p-6 rounded-xl text-center card-hover">
+                            <i data-lucide="leaf" class="w-8 h-8 mx-auto mb-2"></i>
+                            <h4 class="font-semibold">Pertanian</h4>
+                            <p class="text-sm opacity-90">Teknologi Modern</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-sky-500 to-sky-600 text-white p-6 rounded-xl text-center card-hover">
+                            <i data-lucide="trophy" class="w-8 h-8 mx-auto mb-2"></i>
+                            <h4 class="font-semibold">Olahraga</h4>
+                            <p class="text-sm opacity-90">Juara Regional</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-indigo-500 to-indigo-600 text-white p-6 rounded-xl text-center card-hover">
+                            <i data-lucide="users" class="w-8 h-8 mx-auto mb-2"></i>
+                            <h4 class="font-semibold">Komunitas</h4>
+                            <p class="text-sm opacity-90">Pemimpin Tim</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-br from-cyan-50 to-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-cyan-800 mb-4">Pengalaman & Prestasi</h2>
+                <p class="text-xl text-cyan-600 max-w-3xl mx-auto font-medium">
+                    Perjalanan karir dan pencapaian yang membentuk visi bisnis berkelanjutan
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="bg-gradient-to-br from-white to-yellow-50 p-8 rounded-2xl shadow-lg border border-yellow-100">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="award" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-yellow-800">Juara Regional Futsal</h3>
+                                <p class="text-yellow-600 font-medium">2019 - Pemimpin Tim</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed font-medium">
+                            Memimpin tim futsal lokal meraih juara regional setelah 3 tahun persiapan. 
+                            Pengalaman ini mengajarkan tentang kepemimpinan, strategi, dan pentingnya 
+                            kerja tim yang solid. Kemenangan ini menjadi motivasi untuk menerapkan 
+                            prinsip-prinsip olahraga dalam bisnis.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-white to-green-50 p-8 rounded-2xl shadow-lg border border-green-100">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="leaf" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-green-800">Pertanian Organik Modern</h3>
+                                <p class="text-green-600 font-medium">2018 - Sekarang</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed font-medium">
+                            Mengembangkan sistem pertanian organik dengan teknologi modern yang menghasilkan 
+                            produk berkualitas tinggi. Berhasil meningkatkan hasil panen hingga 40% sambil 
+                            menjaga kelestarian lingkungan. Sistem ini menjadi model bagi petani lokal.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="bg-gradient-to-br from-white to-orange-50 p-8 rounded-2xl shadow-lg border border-orange-100">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-orange-500 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="heart" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-orange-800">Peternakan Berkelanjutan</h3>
+                                <p class="text-orange-600 font-medium">2016 - Sekarang</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed font-medium">
+                            Membangun peternakan dengan standar kesejahteraan hewan tertinggi. 
+                            Berhasil mengembangkan sistem pakan organik dan manajemen kesehatan hewan 
+                            yang mengurangi penggunaan antibiotik hingga 70%. Produk ternak berkualitas 
+                            tinggi dan ramah lingkungan.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-white to-purple-50 p-8 rounded-2xl shadow-lg border border-purple-100">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-500 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-purple-800">Komunitas Petani Muda</h3>
+                                <p class="text-purple-600 font-medium">2020 - Sekarang</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed font-medium">
+                            Mendirikan komunitas petani muda yang fokus pada pertanian berkelanjutan. 
+                            Mengadakan pelatihan dan workshop untuk 200+ petani muda. Berhasil menginspirasi 
+                            generasi muda untuk terjun ke bidang pertanian modern dan berkelanjutan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats Section -->
+            <div class="mt-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-8 text-white shadow-xl">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold mb-4">Pencapaian dalam Angka</h3>
+                    <p class="text-yellow-100 font-medium">Hasil kerja keras dan dedikasi selama bertahun-tahun</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">12+</div>
+                        <div class="text-yellow-100 font-medium">Tahun Pengalaman</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">200+</div>
+                        <div class="text-yellow-100 font-medium">Petani Terinspirasi</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">500+</div>
+                        <div class="text-yellow-100 font-medium">Hektar Lahan Dikelola</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">1000+</div>
+                        <div class="text-yellow-100 font-medium">Hewan Ternak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section -->
+    <section id="business" class="py-20 bg-gradient-to-br from-sky-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-800 mb-4">Venture Bisnis</h2>
+                <p class="text-xl text-blue-600 max-w-3xl mx-auto">
+                    Membangun masa depan yang berkelanjutan melalui pertanian dan peternakan modern
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-blue-100">
+                    <div class="h-48 bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
+                        <i data-lucide="leaf" class="w-16 h-16 text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4 text-gradient">Pertanian Modern</h3>
+                        <p class="text-blue-700 mb-6 leading-relaxed">
+                            Mengembangkan sistem pertanian yang efisien dan berkelanjutan dengan teknologi modern. 
+                            Saya menerapkan metode pertanian organik yang tidak hanya menghasilkan produk berkualitas tinggi, 
+                            tetapi juga menjaga kelestarian lingkungan. Dengan menggunakan teknologi irigasi cerdas, 
+                            pemupukan organik, dan pengendalian hama alami, saya berhasil menciptakan sistem pertanian 
+                            yang ramah lingkungan dan menguntungkan secara ekonomi.
+                        </p>
+                        <ul class="space-y-2 text-blue-600">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-emerald-500 mr-2"></i>
+                                Praktik pertanian organik
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-emerald-500 mr-2"></i>
+                                Manajemen air berkelanjutan
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-emerald-500 mr-2"></i>
+                                Produksi tanaman berkualitas
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-white to-cyan-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-cyan-100">
+                    <div class="h-48 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                        <i data-lucide="heart" class="w-16 h-16 text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4 text-gradient">Peternakan Berkelanjutan</h3>
+                        <p class="text-blue-700 mb-6 leading-relaxed">
+                            Mengelola peternakan dengan standar kesejahteraan hewan yang tinggi dan praktik 
+                            yang ramah lingkungan untuk menghasilkan produk berkualitas. Saya menerapkan sistem 
+                            peternakan yang mengutamakan kesejahteraan hewan, mulai dari pakan berkualitas, 
+                            lingkungan yang nyaman, hingga perawatan kesehatan yang teratur. Dengan pendekatan 
+                            ini, saya tidak hanya menghasilkan produk ternak yang sehat dan berkualitas, 
+                            tetapi juga menciptakan bisnis yang berkelanjutan dan bertanggung jawab.
+                        </p>
+                        <ul class="space-y-2 text-blue-600">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-amber-500 mr-2"></i>
+                                Standar kesejahteraan hewan
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-amber-500 mr-2"></i>
+                                Praktik ramah lingkungan
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-amber-500 mr-2"></i>
+                                Produk ternak berkualitas
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Section -->
+    <section id="sports" class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-indigo-800 mb-4">Olahraga & Rekreasi</h2>
+                <p class="text-xl text-indigo-600 max-w-3xl mx-auto">
+                    Passion untuk sepak bola dan futsal yang menginspirasi kehidupan sehari-hari
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-200 p-3 rounded-lg">
+                            <i data-lucide="zap" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-indigo-800 mb-2">Sepak Bola</h3>
+                            <p class="text-indigo-600">
+                                Menonton dan bermain sepak bola adalah passion yang tidak pernah pudar. 
+                                Olahraga ini mengajarkan strategi, kerja tim, dan semangat pantang menyerah. 
+                                Saya pernah memimpin tim lokal yang berhasil meraih juara regional.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-cyan-200 p-3 rounded-lg">
+                            <i data-lucide="target" class="w-6 h-6 text-cyan-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-indigo-800 mb-2">Futsal</h3>
+                            <p class="text-indigo-600">
+                                Futsal memberikan tantangan teknik dan kecepatan yang berbeda. 
+                                Olahraga ini melatih ketepatan, kelincahan, dan kemampuan mengambil keputusan cepat. 
+                                Pengalaman ini sangat berguna dalam pengambilan keputusan bisnis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-purple-200 p-3 rounded-lg">
+                            <i data-lucide="users" class="w-6 h-6 text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-indigo-800 mb-2">Team Building</h3>
+                            <p class="text-indigo-600">
+                                Olahraga mengajarkan nilai-nilai kepemimpinan dan kerja tim yang sangat 
+                                berguna dalam mengelola bisnis dan membangun relasi. Saya belajar bahwa 
+                                kesuksesan tim datang dari komunikasi yang baik dan saling percaya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border border-indigo-100">
+                    <h3 class="text-2xl font-semibold text-indigo-800 mb-6 text-gradient">Filosofi Olahraga</h3>
+                    <blockquote class="text-lg text-indigo-700 italic mb-6 leading-relaxed">
+                        "Olahraga tidak hanya tentang fisik, tetapi juga tentang mental. 
+                        Setiap permainan mengajarkan kita untuk tidak pernah menyerah, 
+                        bekerja sama, dan selalu berusaha menjadi yang terbaik. Dalam sepak bola, 
+                        saya belajar tentang strategi, timing, dan pentingnya komunikasi. 
+                        Sedangkan futsal mengajarkan saya tentang kecepatan, ketepatan, 
+                        dan kemampuan mengambil keputusan dalam tekanan."
+                    </blockquote>
+                    <div class="grid grid-cols-2 gap-4 counter-section">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 counter" data-target="15">15+</div>
+                            <div class="text-sm text-indigo-600">Tahun Bermain</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600 counter" data-target="100">100+</div>
+                            <div class="text-sm text-indigo-600">Pertandingan Ditonton</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animals Section -->
+    <section id="animals" class="py-20 bg-gradient-to-br from-teal-50 to-emerald-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-teal-800 mb-4">Hewan Kesayangan</h2>
+                <p class="text-xl text-teal-600 max-w-3xl mx-auto">
+                    Kecintaan pada hewan yang mengajarkan tentang kasih sayang, kesabaran, dan tanggung jawab
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Kucing -->
+                <div class="animal-card p-6 rounded-2xl">
+                    <div class="mb-4">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop&crop=center" 
+                             alt="Kucing" class="animal-image">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-teal-800 mb-3">Kucing</h3>
+                    <p class="text-teal-700 mb-4 leading-relaxed">
+                        Kucing adalah hewan yang sangat saya cintai karena kepribadiannya yang unik dan mandiri. 
+                        Mereka mengajarkan saya tentang kesabaran, observasi, dan pentingnya memberikan ruang 
+                        untuk kemandirian. Kucing juga merupakan hewan yang sangat cerdas dan memiliki 
+                        insting yang tajam. Saya memelihara 3 kucing yang sangat lucu dan menggemaskan.
+                    </p>
+                    <div class="flex items-center text-pink-600">
+                        <i data-lucide="heart" class="w-5 h-5 mr-2"></i>
+                        <span class="text-sm font-medium">Hewan Favorit #1</span>
+                    </div>
+                </div>
+
+                <!-- Ayam -->
+                <div class="animal-card p-6 rounded-2xl">
+                    <div class="mb-4">
+                        <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=400&h=300&fit=crop&crop=center" 
+                             alt="Ayam" class="animal-image">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-teal-800 mb-3">Ayam</h3>
+                    <p class="text-teal-700 mb-4 leading-relaxed">
+                        Ayam adalah hewan yang sangat penting dalam bisnis peternakan saya. Mereka tidak hanya 
+                        memberikan telur dan daging berkualitas, tetapi juga mengajarkan tentang manajemen 
+                        kawanan dan pentingnya lingkungan yang sehat. Ayam juga hewan yang sangat sosial 
+                        dan memiliki hierarki yang menarik untuk dipelajari. Saya memiliki lebih dari 200 ekor ayam.
+                    </p>
+                    <div class="flex items-center text-yellow-600">
+                        <i data-lucide="egg" class="w-5 h-5 mr-2"></i>
+                        <span class="text-sm font-medium">Produktif & Berguna</span>
+                    </div>
+                </div>
+
+                <!-- Burung -->
+                <div class="animal-card p-6 rounded-2xl">
+                    <div class="mb-4">
+                        <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=400&h=300&fit=crop&crop=center" 
+                             alt="Burung" class="animal-image">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Burung</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Burung adalah simbol kebebasan dan keindahan alam. Mereka mengajarkan saya tentang 
+                        pentingnya keseimbangan ekosistem dan bagaimana setiap makhluk hidup memiliki 
+                        peran penting dalam rantai makanan. Kicauan burung juga memberikan ketenangan 
+                        dan kedamaian di lingkungan peternakan.
+                    </p>
+                    <div class="flex items-center text-orange-600">
+                        <i data-lucide="feather" class="w-5 h-5 mr-2"></i>
+                        <span class="text-sm font-medium">Simbol Kebebasan</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Philosophy Section -->
+            <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Filosofi Kecintaan pada Hewan</h3>
+                    <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                        "Setiap hewan memiliki keunikan dan keindahannya sendiri. Mereka mengajarkan kita tentang 
+                        kesabaran, kasih sayang, dan tanggung jawab. Dalam bisnis peternakan, saya selalu 
+                        mengedepankan kesejahteraan hewan karena saya percaya bahwa hewan yang bahagia akan 
+                        menghasilkan produk yang berkualitas."
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="heart-handshake" class="w-8 h-8 text-orange-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Kasih Sayang</h4>
+                        <p class="text-gray-600 text-sm">Memberikan perhatian dan kasih sayang yang tulus</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Kesejahteraan</h4>
+                        <p class="text-gray-600 text-sm">Memastikan hewan hidup dalam kondisi terbaik</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="leaf" class="w-8 h-8 text-blue-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Keberlanjutan</h4>
+                        <p class="text-gray-600 text-sm">Menjaga keseimbangan alam dan ekosistem</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Hubungi Saya</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Mari berkolaborasi untuk membangun masa depan yang lebih baik
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Informasi Kontak</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-primary-600 p-3 rounded-lg">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <p class="text-gray-300">jhovani.wijaya@email.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-600 p-3 rounded-lg">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Telepon</p>
+                                <p class="text-gray-300">+62 812-3456-7890</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-purple-600 p-3 rounded-lg">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Lokasi</p>
+                                <p class="text-gray-300">Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Ikuti Saya</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-primary-600 hover:bg-primary-700 p-3 rounded-lg transition-colors">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="bg-green-600 hover:bg-green-700 p-3 rounded-lg transition-colors">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 p-3 rounded-lg transition-colors">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold mb-6">Kirim Pesan</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Nama</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Pesan</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p>&copy; 2024 Jhovani Wijaya. Semua hak dilindungi.</p>
+                <p class="mt-2 text-sm">Dibangun dengan passion untuk pertanian, peternakan, dan olahraga.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/main.ts" type="module"></script>
+</body>
+</html>
